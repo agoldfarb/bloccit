@@ -13,6 +13,8 @@ group :development do
    gem 'sqlite3'
 end
 
+gem 'pry-rails'
+
 gem 'bootstrap-sass'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
