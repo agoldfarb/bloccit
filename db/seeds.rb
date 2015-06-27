@@ -16,6 +16,17 @@ require 'faker'
      body: Faker::Lorem.paragraph
    )
  end
+
+ Post.create!(
+    title: "Hey guys!",
+    body: "Here is a post"
+  )
+
+ Comment.create!(
+    body: "here's a comment"
+  )
+
+
  
  puts "Seed finished"
  puts "#{Post.count} posts created"
