@@ -1,0 +1,8 @@
+SENDGRID_PASSWORD: ENV['SENDGRID_PASSWORD']
+SENDGRID_USERNAME: ENV['SENDGRID_USERNAME']
+AWS_ACCESS_KEY_ID: SEcr3tDeV1seK3Y
+AWS_SECRET_ACCESS_KEY: 1lyjmezGv+BH8ITbDMbBOxwQMGjxj6qUNhPaRUsw 
+development:
+  AWS_BUCKET: goldfarb-bloccit-development
+production:
+  AWS_BUCKET: goldfarb-bloccit-production
