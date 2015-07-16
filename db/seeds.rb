@@ -31,6 +31,7 @@ users = User.all
    Post.create!(
      user:   users.sample,
      topic:  topics.sample,
+     comment: comments.sample,
      title:  Faker::Lorem.sentence,
      body:   Faker::Lorem.paragraph
     )
@@ -40,7 +41,7 @@ users = User.all
  # Create Comments
  100.times do
    Comment.create!(
-     #user :users.sample, 
+     user :users.sample, 
      post: posts.sample,
      body: Faker::Lorem.paragraph
    )
