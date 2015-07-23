@@ -9,12 +9,14 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = Comment.new
     authorize @post
+    authorize @topic
   end
 
   def new
     @topic = Topic.find(params[:topic_id])
     @post = Post.new
     authorize @post
+    authorize @topic
   end
 
   def create
@@ -22,6 +24,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.topic = @topic
     authorize @post
+    authorize @topic
 
     if @post.save
       @post.create_vote
@@ -37,12 +40,14 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
+    authorize @topic
   end
 
   def update
     @topic = Topic.find(params[:topic_id])
     @post = Post.new(post_params)
     authorize @post
+    authorize @topic
 
     if @post.update_attributes(params.require(:post).permit(:title, :body))
        flash[:notice] = "Post was updated."
@@ -57,6 +62,7 @@ class PostsController < ApplicationController
     @topic = Topic.find(params[:topic_id])
     @post = Post.find(params[:id])
     authorize @post
+    authorize @topic
  
     if @post.destroy
       flash[:notice] = "\"#{@post.title}\" was deleted successfully."
