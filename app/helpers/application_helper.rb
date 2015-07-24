@@ -16,17 +16,17 @@ module ApplicationHelper
 
   def up_vote_link_classes(post)
     if current_user.voted(post) && current_user.voted(post).up_vote?
-      "voted"
+      "Voted"
     else
-      ""
+      " "
     end
   end
 
   def down_vote_link_class(post)
     if current_user.voted(post) && current_user.voted(post).down_vote?
-      "voted"
+      "Voted"
     else
-      ""
+      " "
     end
   end
 end
