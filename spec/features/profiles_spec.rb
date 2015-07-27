@@ -30,10 +30,11 @@ end
 
   describe "user viewing own profile" do
     before do
+      login_as(@user, :scope => @user)
+    end
     @user = create(:user)
     @post = create(:post, user: @user)
     @comment = create(:comment, user: @user, post: @post)
-    login_as(@user, :scope => @user)
   end
 
   it "shows profile" do
