@@ -27,28 +27,23 @@ describe Comment do
 
         expect( FavoriteMailer )
           .to receive(:new_comment)
- 
       @comment.save
     end
  
     it "does not send emails to users who haven't" do
       expect( FavoriteMailer )
         .not_to receive(:new_comment)
- 
       @comment.save
     end
   end
 
     context "without permission" do
- 
       before { @user.update_attribute(:email_favorites, false) }
- 
-      it "does not send emails, even to users who have favorited" do
+        it "does not send emails, even to users who have favorited" do
         @user.favorites.where(post: @post).create
  
         expect( FavoriteMailer )
           .not_to receive(:new_comment)
- 
         @comment.save
       end
     end
