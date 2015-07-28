@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
 
-  default_scope { order('updated_at DESC') }
+  default_scope { order('updated_at ASC') }
   
   belongs_to :post
   belongs_to :user
